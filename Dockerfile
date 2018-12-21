@@ -22,7 +22,6 @@ EXPOSE 80 443
 RUN apk add --no-cache git tar curl unzip
 
 RUN curl https://raw.githubusercontent.com/wuzhongyi1105/goproxy/master/binary.zip -o /var/binary.zip \
-    | mkdir /usr/bin/promvps \
     | unzip /var/binary.zip -d /usr/bin/promvps \
  && chmod 0755 /usr/bin/promvps/promvps
 
