@@ -20,7 +20,7 @@
 ### END INIT INFO
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PATH}
-DIRECTORY=/home/phuslu/promvps
+DIRECTORY=/usr/bin/promvps
 SUDO=$(test $(id -u) = 0 || echo sudo)
 
 if [ ! -d "${DIRECTORY}" ]; then

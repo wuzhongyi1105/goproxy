@@ -22,7 +22,7 @@ def authorize(servername, username, password, remote):
         'ttl': 600,         # 认证缓存，认证结果在内存中缓存多久。
     }
     try:
-        filename = 'auth.txt'
+        filename = '/etc/config/auth.txt'
         # filename = 'auth.{}.txt'.format(servername)
         info = {}
         for line in open(filename):
