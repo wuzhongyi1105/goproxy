@@ -1,5 +1,5 @@
 ## Prom
-a bot with https server so you can autoupdate certs.
+a bot with web server so you can autoupdate certs.
 
 ### Features
 * tls1.3 + http2 + quic
