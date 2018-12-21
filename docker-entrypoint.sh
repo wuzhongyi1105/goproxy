@@ -57,6 +57,8 @@ EOF
 
 /usr/bin/promvps/promvps /etc/config/production.toml
 
+sleep 10
+
 start_line=`sed -n -e '/BEGIN EC PRIVATE KEY/=' /usr/bin/promvps/certs/${DOMAIN}`
 end_line=`sed -n -e '/END EC PRIVATE KEY/=' /usr/bin/promvps/certs/${DOMAIN}`
 key_content=`cat /usr/bin/promvps/certs/${DOMAIN} | head -n $end_line |tail -n +$start_line`
