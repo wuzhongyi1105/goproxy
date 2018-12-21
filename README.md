@@ -1,29 +1,18 @@
-## PromVPS
-a full-featured https server
+## Prom
+a bot with https server so you can autoupdate certs.
 
 ### Features
 * tls1.3 + http2 + quic
 * autocert(Let's Encrypt) support
-* plain http2 support
-* tls termination
-* sni routing
-* forward chain
-* global dns cache
+* share certs with HyperApp
+* a ramdom website
 * custom dns server support
 * dns over tls support
 * hosts file support
-* flexible auth
-* outbound ip address support
-* tls prober mitigation
-* pac file with china_ip_list
-* country/region bypass rules
-* traffic metrics
-* pprof/expvar handler
-* graceful reload
 
 ### Installation
 ```
-curl -L git.io/get-promvps | bash
+docker run
 ```
 
 ### Configuraion
@@ -34,7 +23,5 @@ see [sysctl.conf](https://phuslu.github.io/sysctl.conf)
 
 ### Build
 ```
-# bootstrap go from https://github.com/phuslu/go
-go list -deps | egrep '^[^/]+\.[^/]+/' | xargs -n1 -i go get -u -v {}
-go build -v
+docker build
 ```
