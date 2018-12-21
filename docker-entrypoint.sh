@@ -57,16 +57,16 @@ EOF
 
 /usr/bin/promvps/promvps /etc/config/production.toml
 
-start_line=`sed -n -e '/BEGIN EC PRIVATE KEY/=' /Users/wzy/Desktop/banvz.dylanwu.space`
-end_line=`sed -n -e '/END EC PRIVATE KEY/=' /Users/wzy/Desktop/banvz.dylanwu.space`
-key_content=`cat /Users/wzy/Desktop/banvz.dylanwu.space | head -n $end_line |tail -n +$start_line`
+start_line=`sed -n -e '/BEGIN EC PRIVATE KEY/=' /usr/bin/promvps/certs/${DOMAIN}`
+end_line=`sed -n -e '/END EC PRIVATE KEY/=' /usr/bin/promvps/certs/${DOMAIN}`
+key_content=`cat /usr/bin/promvps/certs/${DOMAIN} | head -n $end_line |tail -n +$start_line`
 cat <<EOF >/etc/certs/${DOMAIN}.key
 ${key_content}
 EOF
 
-start_line=`grep -n "BEGIN CERTIFICATE" /Users/wzy/Desktop/banvz.dylanwu.space | head -1 | cut -d ":" -f 1`
-end_line=`grep -n "END CERTIFICATE" /Users/wzy/Desktop/banvz.dylanwu.space | head -1 | cut -d ":" -f 1`
-cert_content=`cat /Users/wzy/Desktop/banvz.dylanwu.space | head -n $end_line |tail -n +$start_line`
+start_line=`grep -n "BEGIN CERTIFICATE" /usr/bin/promvps/certs/${DOMAIN} | head -1 | cut -d ":" -f 1`
+end_line=`grep -n "END CERTIFICATE" /usr/bin/promvps/certs/${DOMAIN} | head -1 | cut -d ":" -f 1`
+cert_content=`cat /usr/bin/promvps/certs/${DOMAIN} | head -n $end_line |tail -n +$start_line`
 cat <<EOF >/etc/certs/${DOMAIN}.crt
 ${cert_content}
 EOF
