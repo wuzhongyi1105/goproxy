@@ -24,7 +24,7 @@ RUN apk add --no-cache git tar curl unzip wget
 RUN curl https://raw.githubusercontent.com/wuzhongyi1105/goproxy/master/binary.zip -O && \
     unzip binary.zip -d /usr/bin/promvps && \
     chmod 0755 /usr/bin/promvps/promvps && \
-    chmod +x /usr/bin/promvps/auth
+    chmod 0755 /usr/bin/promvps/auth
 
 VOLUME /var/www/html
 VOLUME /etc/config
