@@ -21,7 +21,7 @@ fi
 
 if [ ! -n "$HOSTS_FILE" ];then
   HOSTS_FILE="#dns_files = ['/etc/hosts', '/etc/config/hosts.txt']"
-  echo 'Enable Hosts file'
+  echo 'Disable Hosts file'
 else
   HOSTS_FILE="dns_files = ['/etc/hosts', '/etc/config/hosts.txt']"
   echo 'Enable Hosts file'
@@ -32,7 +32,6 @@ cat <<EOF >/etc/config/production.toml
 max_idle_conns = 100
 dial_timeout = 30
 dns_ttl = 1800
-prefer_ipv6 = ${IPV6}
 reject_intranet = true
 allow_empty_sni = ${ALLOW_EMPTY_SNI}
 #graceful_timeout = 300

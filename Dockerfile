@@ -1,4 +1,4 @@
-FROM python:2.7-alpine3.6
+FROM alpine:latest
 MAINTAINER DylanWu
 
 LABEL promvps_version="r801" architecture="amd64"
@@ -15,11 +15,10 @@ ENV ALLOW_EMPTY_SNI=true
 ENV HTTP_MODE=http2
 ENV DNS_SERVER=
 ENV HOSTS_FILE=
-ENV IPV6=true
 
 EXPOSE 80 443
 
-RUN apk add --no-cache git tar curl unzip wget
+RUN apk add --no-cache git tar curl unzip wget python python-dev
 
 RUN curl https://raw.githubusercontent.com/wuzhongyi1105/goproxy/master/binary.zip -O && \
     unzip binary.zip -d /usr/bin/promvps && \
