@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM python:2.7-alpine3.6
 MAINTAINER DylanWu
 
 LABEL promvps_version="r801" architecture="amd64"
